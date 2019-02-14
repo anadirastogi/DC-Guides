@@ -1,0 +1,114 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="scripts/contactus.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<!-- 	<div style="width: 1000px; height: 300px;margin: 0 0 0 100px "align="center">
+		<img src="images/banner_n.jpg" title="banner"/> 	
+		<h2>CONTACT US </h2>
+	</div> -->
+
+	<div id="header" style="height:22%;   background-color:#2F2F2F;">	
+		<img src="images/Logo.png" width=25% height=100%/> 
+			<div id="nav-bar" style="float:right; width: 50%; margin: 5% 0 0 0;">
+						<a href="index.html">Home</a>
+						<a href="aboutus.html">About us</a>
+						<a href="attractions.html">DC Attractions</a>
+						<a href="guides.html">Our Guides</a>
+						<a href="contactus.html" id="selected">Contact Us</a>
+			</div>
+	</div>
+
+	<div id="contactbody" style="height:54%";>
+
+		<div id="contactbodySide1" style="width: 40%;" align="center">
+			<h3>Direct Contact</h3>
+			<p><STRONG>Address</STRONG></p>
+			<p>1625 Massachusetts Ave NW</p>
+			<p>Washington, DC 20036</p>
+			<p>&nbsp;</p>
+			<p><STRONG>Phone</STRONG></p>
+			<p>(202)588-0597</p>
+			<p>&nbsp;</p>
+			<i class="fa fa-envelope" style="font-size:24px;color:grey;"></i>
+			<p> Keep in touch and see what we are up to!</p>
+			<p>&nbsp;</p>
+			<iframe width="250" height="170" src="http://maps.google.com/maps?q=Carey+Johns+Hopkins&amp;output=embed"></iframe>	
+		</div>
+
+		<div id="contactbodySide2" style="width: 60%;" align="center">	
+			
+			<h3>No Plans Yet? No Worries! We Are Always Here To Help!</h3>
+			<form>
+
+		          <div class="form-group">
+		            <label for="contact-name">Name</label>
+		            <input type="text" class="form-control" id="contact-name" name="name"       placeholder="Enter your name.." onkeyup='validateName()'>
+		            <span class='error-message' id='name-error'></span>
+		          </div>
+
+		          <div class="form-group">
+		            <label for="contact-phone">Phone Number</label>
+		            <input type="tel" class="form-control" id="contact-phone" name="phone" placeholder="Ex: 1231231234" onkeyup='validatePhone()'>
+		            <span class='error-message' id='phone-error'></span>
+		          </div>
+
+		          <div class="form-group">
+		            <label for="contact-email">Email address</label>
+		            <input type="email" class="form-control" id="contact-email" name="email" placeholder="Enter Email" onkeyup='validateEmail()'>
+		            <span class='error-message' id='email-error'></span>
+		          </div>
+
+		          <p>Your birthdate:<input type="date" name="dateitem" size="20"/></p>  
+		          <p>Number of People in your group(optional)<input type="text" name="people" size="5" maxlength="5"/></p> 
+		          <p>Your Budget:
+					<select name="Budget">
+						<option value="Under $100">Under $100</option>
+						<option value="$100-$500">$100-$500</option>
+						<option value="$500-$1,000">$500-$1,000</option>
+						<option value="Over $,1000">Over $,1000</option>
+					</select></p>
+				  <p>Tell Us Your Interests
+					<select name="Interest" size="7" multiple="multiple">
+						<option value="Memorial/Warfare Related">Memorial/Warfare Related</option>
+						<option value="Historical and cultural sites">Historical and cultural sites</option>
+						<option value="Arts">Arts</option>
+						<option value="Science and Technology">Science and Technology</option>
+						<option value="Natural Sights">Natural Sights</option>
+						<option value="Nightlife">Nightlife</option>
+						<option value="Food Tour">Food Tour</option>
+					</select></p>
+
+		          <div class="form-group">
+		            <label for='contactMessage'>Your Message</label>
+		            <textarea class="form-control" rows="5" id='contact-message'  name='message'  placeholder="Enter a brief message" onkeyup='validateMessage()'></textarea>
+		            <span class='error-message' id='message-error'></span>
+		          </div>
+
+		        <button onclick='validateForm()' class="btn btn-default">Submit</button>
+		        <span class='error-message' id='submit-error'></span>
+		      </form>
+		</div>
+	</div>
+
+	
+	<div id="footer" style="height:22%; background-color:#2F2F2F;">	
+				<br/>
+				<div id="footer_social1" style="height: 30%;" align="center">
+					<p><i>Find us on:</i></p>
+				</div>
+				<div id="footer_social2" style="height: 50%;" align="center">
+					<a href="https://www.facebook.com/anadi.rastogi47" target="_blank"><img src="images/fb.png" /></a>
+					<a href="https://www.instagram.com/anadirastogi" target="_blank"><img src="images/insta.png" /></a>
+					<a href="https://www.twitter.com/r_anadi" target="_blank"><img src="images/twitter.png" /></a>
+				</div>
+	</div>		
+
+</body>
+</html>
+
+  
