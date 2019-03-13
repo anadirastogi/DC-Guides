@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+    "settings": {
+        "xdebug": {
+             "url": ["http://localhost/~apple/InternetSite/",
+             	"http://localhost/~apple/InternetSite/contactus.php",
+             	"http://localhost/~apple/InternetSite/contactus.html"]
+        }
+    }
+}

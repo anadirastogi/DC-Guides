@@ -1,43 +1,82 @@
 <html>
-	<head>
-		<title>DC Tour Guide</title>
-	</head>
+<head>
+	<title>DC Guides Details</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="scripts/toggleCollapse.js"></script>
+</head>
 
-	<body>
-		<div style="width: 900px; height: 120px; background-color: grey; margin: 20 0 0 200px;" align="center">
-                                       <img src="images/DCflag.png" alt="alternative text to display" title="DC" align = "left" style="width:180;height:120"/>                                        
-                                       <h3>Top Rated DC Tour Guide</h3>
-                                </div>
-                                
-		<div style="width: 900px; height: 1000px; background-color: grey; margin: 20 0 0 200px;">
-                                        <div style="width: 900px; height: 580px; background-color: grey;">
-			<div style="width: 400px; height: 580px; background-color: lightyellow; float:left;">
-				<img src="images/Adi.jpg" alt="AnadiRastogi" title="AnadiRastogi" style="width:400;height:400";/>          
-				<p align="center"><b>Anadi Rastogi</b></p>
-				<p align="center">Contact Number: </p>
-				<p align="center">Anadi is a Master student studying in Washington DC. He has been to over 15 museums in DC. He will tell you tips for getting the most out of a museum trip! </p>                   
+<body>
+	<div>
+		<div id="header">	
+			<img src="images/Logo.png" width=25% height=100%/> 
+			<div style="position: fixed; left:78%;">
+			<input class="styled" type="button" onclick="window.location.href='admin.html'" value="Admin login">
 			</div>
-			<div style="width: 400px; height: 580px; background-color: lightyellow; float:right;">
-				<img src="images/Grace.jpg" alt="Grace" title="Grace" style="width:300;height:400; margin: 0 50 0 50px";/>          
+			<div id="nav-bar">
+				<a href="index.html">Home</a>
+				<a href="aboutus.html">About us</a>
+				<a href="attractions.php">DC Attractions</a>
+				<a href="guides.html" id="selected">Our Guides</a>
+				<a href="contactus.html">Contact Us</a>
+			</div>
+		</div>
+
+
+
+		<div id="guidesbody" style="height:85%";>
+
+
+			<div id="guidesbodySide" style="width: 50%;" align="center">
+				<img src="images/Adi.jpg" alt="AnadiRastogi" title="AnadiRastogi" width=60% height=70%/>          
+				<p align="center"><b>Adi</b></p>
+				<p align="center">Contact Number: 2028990764</p>
+				<p id="collapsed1"  align="center" style="display: inline-block;">Anadi is a Master student studying in Washington DC. He has been to ... <a id="collapsedA1" class="toggle" style="display: inline-block;" href="" onclick="return loadFull('collapsed1','collapsedA1','expanded1','expandedA1')">more</a> </p>          
+				<p id="expanded1" align="center" style="display: none;">Anadi is a Master student studying in Washington DC. He has been to over 15 museums in DC. He will tell you tips for getting the most out of a museum trip! <a id="expandedA1" class="toggle" href="" onclick="return loadLess('collapsed1','collapsedA1','expanded1','expandedA1')" style="display: none;">less</a> </p>  
+
+			</div>
+
+			<div id="guidesbodySide" style="width: 50%;" align="center">	
+				<img src="images/Grace.jpg" alt="Grace" title="Grace" width=60% height=70%/>    
 				<p align="center"><b>Grace</b></p>
 				<p align="center">Contact Number: 8143212998 </p> 
-				<p align="center">Grace is a Master student studying in Washington DC. She knows DC area very well, especially the food. Ask her for the Best Things to Eat in DC! </p>                
+				<p id="collapsed2" align="center" style="display: inline-block;"> Grace is a Master student studying in Washington DC.... <a id="collapsedA2" class="toggle" style="display: inline-block;" href="" onclick="return loadFull('collapsed2','collapsedA2','expanded2','expandedA2')">more</a></p>
+				<p id="expanded2" align="center" style="display: none;"> Grace is a Master student studying in Washington DC. She knows DC area very well, especially the food. Ask her for the Best Things to Eat in DC! <a id="expandedA2" style="display: none;" href="" class="toggle" onclick="return loadLess('collapsed2','collapsedA2','expanded2','expandedA2')">less</a></p>      
 			</div>
-                                          </div>
-		          <div style="width: 900px; height: 550px; background-color: grey;">
-			<div style="width: 400px; height: 550px; background-color: lightyellow; float:left;">
-				<img src="images/Veronica.jpg" alt="Veronica" title="Veronica" style="width:400;height:400";/>          
-				<p align="center"><b>Veronica</b></p>
-				<p align="center">Contact Number: </p>                 
-			</div>
-			<div style="width: 400px; height: 550px; background-color: lightyellow; float:right;">
-				<img src="images/Nina.jpg" alt="Nina" title="Nina" style="width:400;height:400";/>          
-				<p align="center"><b>Nina</b></p>
-				<p align="center">Contact Number:  </p>                 
-			</div>
-                                          </div>
-		         
-                                </div>
+		</div>
 
-	</body>
+		<div id="guidesbody" style="height:85%"; >
+
+			<div id="guidesbodySide" style="width: 50%;" align="center">
+				<img src="images/Veronica.jpg" alt="Veronica" title="Veronica" width=60% height=70%/>          
+				<p align="center"><b>Veronica</b></p>
+				<p align="center">Contact Number: 9080788978</p>  
+
+				<p id="collapsed3" align="center" style="display: inline-block;"> Veronica received her PhD in Art Studies from a top university....<a id="collapsedA3" class="toggle" style="display: inline-block;" href="" onclick="return loadFull('collapsed3','collapsedA3','expanded3','expandedA3')">more</a></p>
+				<p id="expanded3" align="center" style="display: none;"> Veronica received her PhD in Art Studies from a top university. She has broad experience and a great taste in art works. Veronica will bring you a perfect art tour in DC.<a id="expandedA3" style="display: none;" href="" class="toggle" onclick="return loadLess('collapsed3','collapsedA3','expanded3','expandedA3')">less</a></p>       
+			</div>
+
+			<div id="guidesbodySide" style="width: 50%;" align="center">	
+				<img src="images/Nina.jpg" alt="Nina" title="Nina" width=60% height=70%/>          
+				<p align="center"><b>Nina</b></p>
+				<p align="center">Contact Number: 7889788967 </p>  
+				<p id="collapsed4" align="center" style="display: inline-block;"> Nina is a graduate student majoring in History. She has great interst in ....<a id="collapsedA4" class="toggle" style="display: inline-block;" href="" onclick="return loadFull('collapsed4','collapsedA4','expanded4','expandedA4')">more</a></p>
+				<p id="expanded4" align="center" style="display: none;"> Nina is a graduate student majoring in History. She has great interst in exploring history and she has done a ton of research on DC culture. She will tell you the best stories when touring historical sites in DC.<a id="expandedA4" style="display: none;" href="" class="toggle" onclick="return loadLess('collapsed4','collapsedA4','expanded4','expandedA4')">less</a></p>      
+			</div>
+		</div>
+
+		
+
+		<div id="footer">	
+			<div id="footer_social1" style="height: 30%;" align="center">
+				<p><i>Find us on:</i></p>
+			</div>
+			<div id="footer_social2" style="height: 50%;" align="center">
+				<a href="https://www.facebook.com/anadi.rastogi47" target="_blank"><img src="images/fb.png" /></a>
+				<a href="https://www.instagram.com/anadirastogi" target="_blank"><img src="images/insta.png" /></a>
+				<a href="https://www.twitter.com/r_anadi" target="_blank"><img src="images/twitter.png" /></a>
+			</div>
+		</div>
+	</div>
+
+</body>
 </html>

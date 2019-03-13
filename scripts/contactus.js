@@ -1,116 +1,116 @@
 
-function validateName() {
-
-  var name = document.getElementById('contact-name').value;
-
-  if(name.length == 0) {
-
-    producePrompt('Name is required', 'name-error' , 'red')
-    return false;
-
-  }
-
-  if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
-
-    producePrompt('First and last name, please.','name-error', 'red');
-    return false;
-
-  }
-
-  producePrompt('Valid', 'name-error', 'green');
-  return true;
-
-}
-
-function validatePhone() {
-
-  var phone = document.getElementById('contact-phone').value;
-
-    if(phone.length == 0) {
-      producePrompt('Phone number is required.', 'phone-error', 'red');
-      return false;
-    }
-
-    if(phone.length != 10) {
-      producePrompt('Include area code.', 'phone-error', 'red');
-      return false;
-    }
-
-    if(!phone.match(/^[0-9]{10}$/)) {
-      producePrompt('Only digits, please.' ,'phone-error', 'red');
-      return false;
-    }
-
-    producePrompt('Valid', 'phone-error', 'green');
+function checkForm() 
+{
+  var name;
+    if (checkName() && checkPhone() && checkEmail() && checkBirth() && checkMessage()){
+    name = document.jform.fullname.value;
     return true;
-
+  } else {
+    return false;
+  }
 }
 
-function validateEmail () {
 
-  var email = document.getElementById('contact-email').value;
-
-  if(email.length == 0) {
-
-    producePrompt('Email Invalid','email-error', 'red');
+function checkName()  {
+  var fullName=document.jform.fullname.value;
+  var pattern=/[0123456789~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/;
+  if (fullName=="") {
+    alert ("Please type in your name.");
+    document.jform.fullname.focus();
     return false;
-
-  }
-
-  if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
-
-    producePrompt('Email Invalid', 'email-error', 'red');
+  } else if (pattern.test(fullName)) {
+    alert ("No numbers or special characters are allowed in name.");
+    document.jform.fullname.value="";
+    document.jform.fullname.focus();
     return false;
-
   }
-
-  producePrompt('Valid', 'email-error', 'green');
   return true;
-
 }
 
-function validateMessage() {
-  var message = document.getElementById('contact-message').value;
-  var required = 30;
-  var left = required - message.length;
 
-  if (left > 0) {
-    producePrompt(left + ' more characters required','message-error','red');
+function checkBirth() {
+  var birthDate=document.jform.birthdate.value;
+  var minDate=new Date("1/1/1900");
+  var todayDate=new Date();
+  if (birthDate=="") {
+    alert ("Please enter your birthdate between 1/1/1900 and today i.e " + todayDate.toLocaleDateString());
+    document.jform.birthdate.focus();
     return false;
-  }
-
-  producePrompt('Valid', 'message-error', 'green');
-  return true;
-
-}
-
-function validateForm() {
-  if (!validateName() || !validatePhone() || !validateEmail() || !validateMessage()) {
-    jsShow('submit-error');
-    producePrompt('Please fix errors to submit.', 'submit-error', 'red');
-    setTimeout(function(){jsHide('submit-error');}, 2000);
-  }
+  } 
   else {
+    birthDate=new Date(birthDate);
+    if (isNaN(birthDate.valueOf())) {
+      alert ("Please enter a valid birthdate between 1/1/1900 and today i.e " + todayDate.toLocaleDateString());
+      document.jform.birthdate.value="";
+      document.jform.birthdate.focus();
+      return false; 
+    } else if (birthDate<minDate || birthDate>todayDate){
+      alert ("Please enter your birthdate between 1/1/1900 and today i.e " + todayDate.toLocaleDateString());
+      document.jform.birthdate.value="";
+      document.jform.birthdate.focus();
+      return false; 
+    }
+  }
+  return true;
+}
+
+
+function checkEmail () {
+
+  var email = document.jform.email.value; 
+  if(email.length == 0) {
+    alert ("Please enter your email");
+    document.jform.email.focus();
+    return false;
+  }
+  if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    alert("Please enter a valid email")
+    document.jform.email.value="";
+    document.jform.email.focus();
+    return false;
 
   }
+  return true;
 }
 
-function jsShow(id) {
-  document.getElementById(id).style.display = 'block';
+function checkPhone() {
+  var phone = document.jform.phone.value;
+
+  if(phone.length == 0) {
+    alert('Phone number is required');
+    document.jform.phone.focus();
+    return false;
+  }
+
+  if(phone.length != 10) {
+    alert('Phone number cannot be more or less than 10 digits');
+    document.jform.email.value="";
+    document.jform.phone.focus();
+    return false;
+  }
+
+  if(!phone.match(/^[0-9]{10}$/)) {
+    alert('Only digits in phone number please');
+    document.jform.email.value="";
+    document.jform.phone.focus();    
+    return false;
+  }
+  return true;
 }
 
-function jsHide(id) {
-  document.getElementById(id).style.display = 'none';
+
+
+function checkMessage() {
+  var message = document.jform.message.value;
+
+  if (message.length == 0) {
+    alert('Your message cannot be empty');
+    document.jform.message.focus();
+    return false;
+  }
+
+  return true;
+
 }
 
-
-
-
-function producePrompt(message, promptLocation, color) {
-
-  document.getElementById(promptLocation).innerHTML = message;
-  document.getElementById(promptLocation).style.color = color;
-
-
-}
 
