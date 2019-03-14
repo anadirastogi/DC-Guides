@@ -33,6 +33,7 @@ while($row = $result->fetch_assoc()){
 $conn->close();
 
 //convert the PHP array into JSON format, so it works with javascript
+// Note that Javascript and PHP are interacting with each other through Javascript Object Notation(JSON)
 $json_array1 = json_encode($array1);
 $json_array2 = json_encode($array2);
 $json_array3 = json_encode($array3);
@@ -65,7 +66,7 @@ $json_array5 = json_encode($array5);
 		<div id="header">	
 			<img src="images/Logo.png" width=25% height=100%/> 
 			<div style="position: fixed; left:78%;">
-			<input class="styled" type="button" onclick="window.location.href='admin.html'" value="Admin login">
+			<input class="styled" type="button" onclick="window.location.href='admin.php'" value="Admin login">
 			</div>
 			<div id="nav-bar">
 				<a href="index.html">Home</a>

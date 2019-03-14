@@ -1,3 +1,6 @@
+// this javascript file is responsible for content collapse/expansion toggle
+
+// this method loads the entire in a div hence used for "expansion"
 function loadFull(ID1,ID2,ID3,ID4){
   var x = document.getElementById(ID3);
   var y = document.getElementById(ID4);
@@ -14,6 +17,7 @@ function loadFull(ID1,ID2,ID3,ID4){
  }
 
 
+// this method hides some part of the div content and hence used for "collapsing"
  function loadLess(ID1,ID2,ID3,ID4){
   var x = document.getElementById(ID3);
   var y = document.getElementById(ID4);

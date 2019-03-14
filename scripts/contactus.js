@@ -1,8 +1,9 @@
 
+// helps in validating all the entries of contact us form before heading to server
 function checkForm() 
 {
   var name;
-    if (checkName() && checkPhone() && checkEmail() && checkBirth() && checkMessage()){
+  if (checkName() && checkPhone() && checkEmail() && checkBirth() && checkMessage()){
     name = document.jform.fullname.value;
     return true;
   } else {

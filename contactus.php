@@ -4,12 +4,9 @@ $fullname=$_POST['fullname'];
 $phone=$_POST['phone'];
 $email=$_POST['email'];
 $dateitem=$_POST['birthdate'];
-$people=$_POST['quantity'];
 $Budget=$_POST['budget'];
 $Interest=$_POST['interests'];
 $message=$_POST['message'];
-
-
 
 require_once 'login.php';
 
@@ -20,26 +17,31 @@ if ($conn->connect_error)
 {
 	$message = "Something went wrong. Please try again!";
 	exitSystem($message);
+	exit();
 }
 
 
-$contact = "INSERT INTO contactus (name,phone,email,birthdate,quantity,budget,interests,message) VALUES ('$fullname', '$phone','$email','$dateitem','$people','$Budget','$Interest','$message');";
+$contact = "insert into contactus (name,phone,email,birthdate,budget,interests,message) values ('$fullname', '$phone','$email','$dateitem','$Budget','$Interest','$message');";
 
-$result = $conn->query($contact);
-$conn->close();
+
+
+$result=$conn->query($contact);
 
 if ($result) {
 	$message = "Thank you. We have received your info and will contact your shortly";
 	exitSystem($message);
 } else {
-	$message = "Something went wrong. Please try again!";
+	$message="Something went wrong. Please try again2!";
 	exitSystem($message);
 }
 
 
+//It takes user back to contact us page and displays the relevant message based on success of query
 function exitSystem($message) {
-		echo "<script type='text/javascript'>alert('$message'); 
-		window.location.href = 'contactus.html'; </script>";
+    echo '<script type="text/javascript">alert("' . $message . '"); window.location.href = "contactus.html";</script>';
+
 }
+
+$conn->close();
 
 ?>
